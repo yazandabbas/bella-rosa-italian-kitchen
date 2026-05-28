@@ -162,8 +162,22 @@ img {
   padding: 0 0 3rem;
 }
 
+.home-shell {
+  margin-top: 0.5rem;
+}
+
 .section-heading {
   max-width: 56rem;
+  margin-bottom: 1.2rem;
+}
+
+.surface-frame {
+  position: relative;
+  padding: 1.3rem;
+  background: color-mix(in oklab, var(--paper) 88%, white);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius-card) + 0.2rem);
+  box-shadow: 0 22px 45px -36px rgba(20, 19, 19, 0.28);
 }
 
 .eyebrow {
@@ -199,14 +213,32 @@ h3 {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(17rem, 0.9fr);
-  align-items: end;
+  grid-template-columns: minmax(0, 1.25fr) minmax(18rem, 1.05fr) minmax(16rem, 0.95fr);
+  align-items: start;
   gap: 2rem;
   padding-top: 2rem;
 }
 
 .hero-content {
   width: min(100%, 42rem);
+}
+
+.hero-media {
+  margin: 0;
+}
+
+.hero-media img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius-card);
+  box-shadow: 0 14px 24px -20px rgba(20, 19, 19, 0.5);
+}
+
+.hero-media figcaption {
+  margin-top: 0.55rem;
+  color: #4a4540;
+  font-size: 0.86rem;
 }
 
 .hero-copy {
@@ -239,6 +271,58 @@ h3 {
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
+}
+
+.quick-stats {
+  margin-top: 1.3rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.quick-stat {
+  border: 1px solid color-mix(in oklab, var(--deep-red) 22%, transparent);
+  border-radius: var(--radius-card);
+  padding: 0.75rem;
+  background: color-mix(in oklab, var(--panel) 76%, var(--paper));
+}
+
+.quick-stat strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1rem;
+}
+
+.quick-stat span {
+  font-size: 0.87rem;
+  color: #4a4742;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.feature-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--panel);
+}
+
+.feature-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.feature-card div {
+  padding: 0.9rem 1rem 1.1rem;
+}
+
+.feature-card h3 {
+  margin-bottom: 0.35rem;
 }
 
 .menu-actions {
@@ -476,7 +560,22 @@ details p {
   .grid-two,
   .menu-card,
   .review-grid,
-  .gallery-grid {
+  .gallery-grid,
+  .feature-grid,
+  .hero-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    align-items: stretch;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-media {
+    order: -1;
+  }
+
+  .quick-stats {
     grid-template-columns: 1fr;
   }
 

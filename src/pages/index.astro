@@ -7,7 +7,7 @@ import { featuredDishes, restaurant } from "../data/site";
   title="Bella Rosa Italian Kitchen | Charlotte, NC"
   description="Bella Rosa Italian Kitchen — neighborhood dining in Charlotte with reservations and pickup ordering."
 >
-  <main>
+  <main class="home-shell">
     <section class="hero surface-frame">
       <div class="hero-content">
         <p class="eyebrow">Elegant • Warm • Neighborhood</p>
@@ -20,8 +20,30 @@ import { featuredDishes, restaurant } from "../data/site";
           <a class="btn" href="/reservations">Reserve a Table</a>
           <a class="btn btn--ghost" href="/online-ordering">Order Pickup</a>
         </div>
+        <div class="quick-stats">
+          <div class="quick-stat">
+            <strong>8 dishes</strong>
+            <span>New seasonal menu every spring and fall</span>
+          </div>
+          <div class="quick-stat">
+            <strong>Walk-up ready</strong>
+            <span>Pickup ordering available from Toast</span>
+          </div>
+          <div class="quick-stat">
+            <strong>South End + Dilworth</strong>
+            <span>Easy parking, easy table availability</span>
+          </div>
+        </div>
       </div>
-      <div class="hero-panel">
+      <figure class="hero-media">
+        <img
+          src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1200&q=80"
+          alt="Pasta and grilled vegetables at Bella Rosa"
+          loading="lazy"
+        />
+        <figcaption>Hand-crafted Italian plates from our spring menu.</figcaption>
+      </figure>
+      <aside class="hero-panel">
         <p class="eyebrow">Today at Bella Rosa</p>
         <div class="hero-kv">
           <h2>Location</h2>
@@ -36,6 +58,35 @@ import { featuredDishes, restaurant } from "../data/site";
             {featuredDishes.map((dish) => <li>{dish.name} — {dish.price}</li>)}
           </ul>
         </div>
+      </aside>
+    </section>
+
+    <section class="content-band">
+      <div class="section-heading">
+        <p class="eyebrow">Experience Bella Rosa</p>
+        <h2>Warm service, crafted food, and neighborhood comfort.</h2>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <img
+            src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=1200&q=80"
+            alt="Warm restaurant table setting"
+          />
+          <div>
+            <h3>Dinner & Date Night</h3>
+            <p>Long tables, soft music, and table service designed for intimate evening dining.</p>
+          </div>
+        </article>
+        <article class="feature-card">
+          <img
+            src="https://images.unsplash.com/photo-1529006557810-274aa172a56a?auto=format&fit=crop&w=1200&q=80"
+            alt="Chef plating pasta"
+          />
+          <div>
+            <h3>Seasonal Menu</h3>
+            <p>Chef-led updates to keep flavors bright and ingredients fresh from farm to fire.</p>
+          </div>
+        </article>
       </div>
     </section>
 
