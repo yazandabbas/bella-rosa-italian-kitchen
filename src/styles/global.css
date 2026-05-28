@@ -20,6 +20,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  min-width: 0;
 }
 
 html {
@@ -89,16 +90,17 @@ img {
 .content-band,
 .surface-frame,
 .page-frame {
-  width: min(100%, 72rem);
+  width: min(100% - 2rem, 72rem);
   margin-inline: auto;
 }
 
 .site-header {
-  display: flex;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  gap: 1rem;
-  justify-content: space-between;
-  padding: 0.85rem max(1rem, calc((100vw - 72rem) / 2));
+  gap: 1.2rem;
+  padding: 0.85rem max(1rem, calc((100vw - 76rem) / 2));
   position: sticky;
   top: 0;
   z-index: 2;
@@ -111,12 +113,14 @@ img {
   display: inline-flex;
   flex-direction: column;
   gap: 0.1rem;
+  flex-shrink: 0;
 }
 
 .brand-mark__name {
   font-family: var(--font-display);
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .brand-mark__eyebrow {
@@ -128,9 +132,12 @@ img {
 
 .site-nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  font-size: 0.95rem;
+  flex-wrap: nowrap;
+  gap: clamp(0.45rem, 1vw, 0.9rem);
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(0.78rem, 0.85vw, 0.94rem);
+  white-space: nowrap;
 }
 
 .header-cta {
@@ -140,6 +147,7 @@ img {
   border-radius: 999px;
   padding: 0.4rem 0.85rem;
   white-space: nowrap;
+  justify-self: end;
 }
 
 .btn {
@@ -203,8 +211,9 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2.6rem, 8vw, 6.4rem);
+  font-size: clamp(2.6rem, 7vw, 5.7rem);
   line-height: 1;
+  overflow-wrap: balance;
 }
 
 h2 {
@@ -214,6 +223,7 @@ h2 {
 
 h3 {
   font-size: 1.2rem;
+  overflow-wrap: anywhere;
 }
 
 .hero {
@@ -310,10 +320,8 @@ h3 {
 }
 
 .feature-card {
-  border: 1px solid var(--border);
-  border-radius: var(--radius-card);
   overflow: hidden;
-  background: var(--panel);
+  background: transparent;
 }
 
 .feature-card img {
@@ -332,7 +340,7 @@ h3 {
 
 .visual-hero {
   position: relative;
-  min-height: min(780px, calc(100vh - 4.5rem));
+  min-height: min(760px, calc(100vh - 4.5rem));
   display: grid;
   align-items: end;
   overflow: hidden;
@@ -363,9 +371,9 @@ h3 {
 .visual-hero__content {
   width: min(44rem, calc(100% - 2rem));
   margin: 0 auto;
-  padding: 7rem 0 7.5rem;
+  padding: 8rem 0 7.5rem;
   color: var(--cream);
-  transform: translateX(min(-13rem, 0px));
+  transform: translateX(-14rem);
 }
 
 .visual-hero__content p {
@@ -383,7 +391,7 @@ h3 {
   bottom: 1rem;
   display: grid;
   gap: 0.15rem;
-  min-width: 18rem;
+  width: min(18rem, calc(100% - 2rem));
   padding: 1rem;
   color: var(--cream);
   background: rgba(18, 52, 42, 0.84);
@@ -399,32 +407,21 @@ h3 {
 
 .action-strip {
   width: min(100% - 2rem, 72rem);
-  margin: -2.35rem auto 4rem;
+  margin: 2rem auto 4rem;
   position: relative;
   z-index: 1;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  background: var(--paper);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-card);
-  box-shadow: 0 22px 45px -38px rgba(20, 19, 19, 0.55);
+  gap: 0.8rem;
+  background: transparent;
 }
 
 .action-strip a {
   display: grid;
-  gap: 0.2rem;
-  padding: 1rem;
-  border-right: 1px solid var(--border);
-}
-
-.action-strip a:last-child {
-  border-right: 0;
-}
-
-.action-strip span {
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
   color: var(--deep-red);
-  font-size: 0.75rem;
-  font-weight: 700;
 }
 
 .image-story,
@@ -486,10 +483,9 @@ h3 {
 .card,
 .menu-card,
 .review-card {
-  border: 1px solid var(--border);
   border-radius: var(--radius-card);
   padding: 1rem;
-  background: var(--panel);
+  background: transparent;
 }
 
 .page-frame {
@@ -507,7 +503,7 @@ h3 {
   color: var(--cream);
   background:
     linear-gradient(90deg, rgba(20, 19, 19, 0.78), rgba(20, 19, 19, 0.2)),
-    url("/assets/generated/bella-hero.png") center / cover;
+    url("/assets/generated/bella-dining-room.png") center / cover;
   border-radius: var(--radius-card);
 }
 
@@ -569,8 +565,9 @@ h3 {
   display: flex;
   flex-direction: column;
   gap: 0;
-  overflow: hidden;
+  overflow: visible;
   padding: 0;
+  border-radius: 0;
 }
 
 .menu-card img {
@@ -581,14 +578,14 @@ h3 {
 }
 
 .menu-card > div {
-  padding: 1rem;
+  padding: 0.9rem 0 0;
 }
 
 .menu-title-row {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .menu-copy {
@@ -737,8 +734,19 @@ details p {
 
 @media (max-width: 860px) {
   .site-header {
-    flex-direction: column;
-    align-items: flex-start;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+
+  .brand-mark__name {
+    white-space: normal;
+  }
+
+  .site-nav {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 0.15rem;
   }
 
   .hero,
@@ -770,7 +778,7 @@ details p {
   }
 
   .visual-hero {
-    min-height: 680px;
+    min-height: 640px;
   }
 
   .visual-hero__content {
@@ -786,16 +794,11 @@ details p {
   }
 
   .action-strip {
-    margin-top: -1.4rem;
+    margin-top: 1.2rem;
   }
 
   .action-strip a {
-    border-right: 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .action-strip a:last-child {
-    border-bottom: 0;
+    padding: 0.8rem 0;
   }
 
   .page-frame {
@@ -807,8 +810,4 @@ details p {
     text-align: center;
   }
 
-  .site-nav {
-    max-height: 8rem;
-    overflow: auto;
-  }
 }
