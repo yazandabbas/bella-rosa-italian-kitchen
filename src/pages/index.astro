@@ -8,141 +8,93 @@ import { featuredDishes, restaurant } from "../data/site";
   description="Bella Rosa Italian Kitchen — neighborhood dining in Charlotte with reservations and pickup ordering."
 >
   <main class="home-shell">
-    <section class="hero surface-frame">
-      <div class="hero-content">
-        <p class="eyebrow">Elegant • Warm • Neighborhood</p>
-        <h1 class="hero-title">Bella Rosa is the neighborhood Italian table where dinner feels like home.</h1>
-        <p class="hero-copy">
-          Reserve a table, order pickup, browse the menu, and discover our seasonally changing dishes inspired by
-          old-world flavors and Southern hospitality.
+    <section class="visual-hero" aria-labelledby="home-title">
+      <img
+        class="visual-hero__image"
+        src="/assets/generated/bella-hero.png"
+        alt="Warm Bella Rosa dining room with Italian plates and candlelight"
+      />
+      <div class="visual-hero__content">
+        <p class="eyebrow eyebrow--light">Charlotte Italian Kitchen</p>
+        <h1 id="home-title">Bella Rosa Italian Kitchen</h1>
+        <p>
+          Handmade pasta, candlelit tables, pickup from Toast, and easy OpenTable reservations in the South End and
+          Dilworth neighborhood.
         </p>
         <div class="hero-actions">
           <a class="btn" href="/reservations">Reserve a Table</a>
-          <a class="btn btn--ghost" href="/online-ordering">Order Pickup</a>
-        </div>
-        <div class="quick-stats">
-          <div class="quick-stat">
-            <strong>8 dishes</strong>
-            <span>New seasonal menu every spring and fall</span>
-          </div>
-          <div class="quick-stat">
-            <strong>Walk-up ready</strong>
-            <span>Pickup ordering available from Toast</span>
-          </div>
-          <div class="quick-stat">
-            <strong>South End + Dilworth</strong>
-            <span>Easy parking, easy table availability</span>
-          </div>
+          <a class="btn btn--light" href="/online-ordering">Order Pickup</a>
         </div>
       </div>
-      <figure class="hero-media">
-        <img
-          src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1200&q=80"
-          alt="Pasta and grilled vegetables at Bella Rosa"
-          loading="lazy"
-        />
-        <figcaption>Hand-crafted Italian plates from our spring menu.</figcaption>
-      </figure>
-      <aside class="hero-panel">
-        <p class="eyebrow">Today at Bella Rosa</p>
-        <div class="hero-kv">
-          <h2>Location</h2>
-          <p>{restaurant.address}</p>
-          <p><a class="inline-link" href={restaurant.links.googleMapsQuery} target="_blank" rel="noreferrer">Open in Google Maps</a></p>
-          <h2>Hours</h2>
-          <p>Mon–Thu: {restaurant.hours.monThu}</p>
-          <p>Fri–Sat: {restaurant.hours.friSat}</p>
-          <p>Sun: {restaurant.hours.sunday}</p>
-          <h2>Featured Dishes</h2>
-          <ul class="feature-dish-list">
-            {featuredDishes.map((dish) => <li>{dish.name} — {dish.price}</li>)}
-          </ul>
-        </div>
-      </aside>
+      <div class="hero-hours">
+        <strong>Open today</strong>
+        <span>Mon-Thu {restaurant.hours.monThu}</span>
+        <span>Fri-Sat {restaurant.hours.friSat}</span>
+      </div>
     </section>
 
-    <section class="content-band">
-      <div class="section-heading">
-        <p class="eyebrow">Experience Bella Rosa</p>
-        <h2>Warm service, crafted food, and neighborhood comfort.</h2>
+    <section class="action-strip" aria-label="Quick actions">
+      <a href="/reservations">
+        <span>01</span>
+        <strong>Book a table</strong>
+      </a>
+      <a href="/online-ordering">
+        <span>02</span>
+        <strong>Order pickup</strong>
+      </a>
+      <a href={restaurant.links.googleMapsQuery} target="_blank" rel="noreferrer">
+        <span>03</span>
+        <strong>Get directions</strong>
+      </a>
+      <a href={restaurant.ordering.giftCardUrl}>
+        <span>04</span>
+        <strong>Gift cards</strong>
+      </a>
+    </section>
+
+    <section class="image-story">
+      <div>
+        <p class="eyebrow">Spring Menu</p>
+        <h2>Food that looks like dinner plans.</h2>
+        <p>
+          Seasonal Italian plates with enough polish for date night and enough warmth for a regular Tuesday table.
+        </p>
+        <a class="inline-link" href="/menu">Explore the menu</a>
       </div>
-      <div class="feature-grid">
+      <img src="/assets/generated/bella-tagliatelle.png" alt="Fresh tagliatelle with mushrooms and herbs" />
+    </section>
+
+    <section class="feature-grid content-band">
+      {featuredDishes.map((dish) => (
         <article class="feature-card">
-          <img
-            src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=1200&q=80"
-            alt="Warm restaurant table setting"
-          />
+          <img src={dish.image} alt={dish.name} />
           <div>
-            <h3>Dinner & Date Night</h3>
-            <p>Long tables, soft music, and table service designed for intimate evening dining.</p>
+            <p class="eyebrow">{dish.tags[0]}</p>
+            <h3>{dish.name}</h3>
+            <p>{dish.description}</p>
+            <strong>{dish.price}</strong>
           </div>
         </article>
-        <article class="feature-card">
-          <img
-            src="https://images.unsplash.com/photo-1529006557810-274aa172a56a?auto=format&fit=crop&w=1200&q=80"
-            alt="Chef plating pasta"
-          />
-          <div>
-            <h3>Seasonal Menu</h3>
-            <p>Chef-led updates to keep flavors bright and ingredients fresh from farm to fire.</p>
-          </div>
-        </article>
-      </div>
+      ))}
     </section>
 
-    <section class="content-band">
-      <div class="section-heading">
-        <p class="eyebrow">Main actions</p>
-        <h2>Start with what matters most:</h2>
-      </div>
-      <div class="home-quick-links">
-        <a class="card" href="/reservations">
-          <h3>Make a reservation</h3>
-          <p>Reserve quickly through OpenTable right from this site.</p>
-          <span class="link-arrow">Reserve now →</span>
-        </a>
-        <a class="card" href="/online-ordering">
-          <h3>Order pickup</h3>
-          <p>Browse the seasonal menu with fast pickup via Toast.</p>
-          <span class="link-arrow">Order now →</span>
-        </a>
-        <a class="card" href="/contact">
-          <h3>Get directions</h3>
-          <p>Find us in Charlotte South End / Dilworth area.</p>
-          <span class="link-arrow">Open map →</span>
-        </a>
-      </div>
-    </section>
-
-    <section class="content-band">
-      <div class="section-heading">
-        <p class="eyebrow">About Bella Rosa</p>
-        <h2>Simple recipes, bright flavors, warm service.</h2>
-      </div>
-      <div class="two-column-copy">
+    <section class="split-band">
+      <img src="/assets/generated/bella-catering.png" alt="Private dining table with Italian catering dishes" />
+      <div>
+        <p class="eyebrow">Private Dining</p>
+        <h2>Family-style tables, finished beautifully.</h2>
         <p>
-          Bella Rosa is designed to feel like your neighborhood favorite with a chef’s attention to detail. We keep the
-          menu focused and seasonal, with meaningful upgrades as spring and fall ingredients shift.
+          Catering and private dining for anniversaries, office dinners, holiday hosting, and intimate celebrations.
         </p>
-        <p>
-          We update our menu regularly and want both comfort and celebration in one place — whether you’re planning a
-          date night or a family gathering.
-        </p>
+        <a class="btn btn--ghost" href="/catering">Plan Catering</a>
       </div>
-      <a class="inline-link" href="/about">Read our story</a>
     </section>
 
-    <section class="content-band">
-      <div class="section-heading">
-        <p class="eyebrow">What guests say</p>
-        <h2>Seasoned hospitality and honest food.</h2>
-      </div>
-      <blockquote class="quote-block">
-        “Our table was everything we hoped for—cozy, attentive, and full of personality. You can feel the care in every
-        course.”
-        <footer>— Priya, Sunday family dinner</footer>
+    <section class="review-band">
+      <blockquote>
+        "Cozy, attentive, and full of personality. You can feel the care in every course."
       </blockquote>
-      <a class="inline-link" href="/reviews">Read reviews</a>
+      <a class="inline-link" href="/reviews">Read guest reviews</a>
     </section>
   </main>
 </SiteLayout>

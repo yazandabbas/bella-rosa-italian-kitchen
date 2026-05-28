@@ -46,8 +46,7 @@ export const menuItems = [
         description:
           "Whole artichokes roasted with lemon-herb aioli and a touch of lemon zest.",
         tags: ["Popular", "Vegetarian"],
-        image:
-          "https://images.unsplash.com/photo-1550966871-3ed5b5f9aeb1?auto=format&fit=crop&w=1200&q=80",
+        image: "/assets/generated/bella-catering.png",
       },
       {
         name: "Bruschetta Classica",
@@ -55,8 +54,7 @@ export const menuItems = [
         description:
         "Toasted focaccia, vine-ripened tomatoes, basil, and extra virgin olive oil.",
         tags: ["Vegetarian"],
-        image:
-          "https://images.unsplash.com/photo-1523987355523-c7b5b0723c4c?auto=format&fit=crop&w=1200&q=80",
+        image: "/assets/generated/bella-chef.png",
       },
       {
         name: "Prosciutto and Melon",
@@ -64,8 +62,7 @@ export const menuItems = [
         description:
           "Thinly sliced prosciutto with chilled cantaloupe and house ricotta, finished with cracked black pepper.",
         tags: ["Gluten-Free"],
-        image:
-          "https://images.unsplash.com/photo-1608039755392-a9d7f3b3f6f2?auto=format&fit=crop&w=1200&q=80",
+        image: "/assets/generated/bella-hero.png",
       },
     ],
   },
@@ -78,8 +75,7 @@ export const menuItems = [
         description:
           "House-made tagliatelle with wild mushrooms, butter, white wine, and shaved black truffle.",
         tags: ["Popular"],
-        image:
-          "https://images.unsplash.com/photo-1553163147-622ab57be1c7?auto=format&fit=crop&w=1200&q=80",
+        image: "/assets/generated/bella-tagliatelle.png",
       },
       {
         name: "Lemon Risotto Primavera",
@@ -87,8 +83,7 @@ export const menuItems = [
         description:
           "Creamy seasonal risotto with spring peas, asparagus, and lemon zest.",
         tags: ["Vegetarian", "Gluten-Free"],
-        image:
-          "https://images.unsplash.com/photo-1603360946369-dc2f9c2f7ca2?auto=format&fit=crop&w=1200&q=80",
+        image: "/assets/generated/bella-chef.png",
       },
       {
         name: "Spicy Sausage Pappardelle",
@@ -96,8 +91,7 @@ export const menuItems = [
         description:
           "House-made pappardelle with San Marzano tomato, house sausage, chili oil, and aged pecorino.",
         tags: ["Popular"],
-        image:
-          "https://images.unsplash.com/photo-1551248429-40975aa4de74?auto=format&fit=crop&w=1200&q=80",
+        image: "/assets/generated/bella-tagliatelle.png",
       },
     ],
   },
@@ -110,8 +104,7 @@ export const menuItems = [
         description:
           "Chicken breast wrapped with Serrano ham, sage, and a buttered caper pan sauce.",
         tags: ["Popular"],
-        image:
-          "https://images.unsplash.com/photo-1626200925761-5d5f3c6f8d8b?auto=format&fit=crop&w=1200&q=80",
+        image: "/assets/generated/bella-catering.png",
       },
       {
         name: "Braised Short Ribs al Vino Rosso",
@@ -119,8 +112,7 @@ export const menuItems = [
         description:
           "Slow-braised short ribs over creamy polenta with roasted carrots and gremolata.",
         tags: [],
-        image:
-          "https://images.unsplash.com/photo-1571407970349-3d2f0f3b8d2f?auto=format&fit=crop&w=1200&q=80",
+        image: "/assets/generated/bella-hero.png",
       },
       {
         name: "Eggplant Parmigiana",
@@ -128,8 +120,7 @@ export const menuItems = [
         description:
           "Crispy eggplant, tomato-simmered sauce, baked mozzarella, and herb breadcrumbs.",
         tags: ["Vegetarian"],
-        image:
-          "https://images.unsplash.com/photo-1555992336-2f4f4f1c1f8f?auto=format&fit=crop&w=1200&q=80",
+        image: "/assets/generated/bella-chef.png",
       },
     ],
   },
@@ -142,20 +133,20 @@ export const featuredDishes = menuItems
 
 export const galleryImages = [
   {
-    src: "https://images.unsplash.com/photo-1612874742237-6526221588a6?auto=format&fit=crop&w=1200&q=80",
-    alt: "Wood-fired pizza with cheese and basil on a rustic table",
+    src: "/assets/generated/bella-hero.png",
+    alt: "Warm Bella Rosa dining room with Italian plates and candlelight",
   },
   {
-    src: "https://images.unsplash.com/photo-1481833761820-0509d3217039?auto=format&fit=crop&w=1200&q=80",
-    alt: "Cozy candlelit interior seating with warm lighting",
+    src: "/assets/generated/bella-tagliatelle.png",
+    alt: "Fresh tagliatelle with mushrooms, herbs, and parmesan",
   },
   {
-    src: "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1200&q=80",
-    alt: "Close-up of hand-tossed pasta being plated",
+    src: "/assets/generated/bella-catering.png",
+    alt: "Private dining table with family-style Italian dishes",
   },
   {
-    src: "https://images.unsplash.com/photo-1590947132387-155cc02f3212?auto=format&fit=crop&w=1200&q=80",
-    alt: "Restaurant entrée service and wine pairing",
+    src: "/assets/generated/bella-chef.png",
+    alt: "Chef finishing fresh pasta at the kitchen pass",
   },
 ];
 
