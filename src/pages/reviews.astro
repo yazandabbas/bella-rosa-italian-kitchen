@@ -1,0 +1,28 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import { restaurant, testimonials } from "../data/site";
+---
+
+<SiteLayout
+  title="Reviews | Bella Rosa Italian Kitchen"
+  description="Guest reviews and social proof for Bella Rosa."
+>
+  <main class="content-band page-frame">
+    <div class="section-heading">
+      <p class="eyebrow">Reviews</p>
+      <h1>What guests are saying</h1>
+      <p class="hero-copy">Real feedback, real evenings, and warm recommendations from our local guests.</p>
+      <a class="inline-link" href={restaurant.links.googleReviews} target="_blank" rel="noreferrer">Read Google reviews</a>
+    </div>
+
+    <section class="review-grid">
+      {testimonials.map((review) => (
+        <article class="review-card">
+          <p>{review.quote}</p>
+          <p class="reviewer">{review.name}</p>
+          <p class="review-source">{review.source}</p>
+        </article>
+      ))}
+    </section>
+  </main>
+</SiteLayout>

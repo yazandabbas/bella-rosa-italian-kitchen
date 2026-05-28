@@ -1,0 +1,36 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import { restaurant } from "../data/site";
+---
+
+<SiteLayout
+  title="Reservations | Bella Rosa Italian Kitchen"
+  description="Reserve a table at Bella Rosa Italian Kitchen in Charlotte with our OpenTable booking form."
+>
+  <main class="content-band page-frame">
+    <div class="section-heading">
+      <p class="eyebrow">Reservations</p>
+      <h1>Reserve your seat</h1>
+      <p class="hero-copy">
+        OpenTable availability and reservation details are embedded below. You can also call us directly for party sizes or special
+        seating requests.
+      </p>
+      <a class="btn" href={`tel:${restaurant.phone.replace(/\D/g, "")}`}>Call to reserve</a>
+    </div>
+
+    <section class="content-band">
+      <iframe
+        title="OpenTable Reservation Widget"
+        src={restaurant.reservation.openTableWidgetUrl}
+        class="reservation-widget"
+        loading="lazy"
+      ></iframe>
+      <p class="hero-copy">
+        Don’t see the widget? Open directly with OpenTable:
+        <a class="inline-link" href={restaurant.reservation.openTableButtonUrl} target="_blank" rel="noreferrer">
+          OpenTable reservation page
+        </a>
+      </p>
+    </section>
+  </main>
+</SiteLayout>

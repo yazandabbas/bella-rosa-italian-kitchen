@@ -1,0 +1,33 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import { restaurant } from "../data/site";
+---
+
+<SiteLayout
+  title="Online Ordering | Bella Rosa Italian Kitchen"
+  description="Order pickup from Bella Rosa Italian Kitchen with Toast."
+>
+  <main class="content-band page-frame">
+    <div class="section-heading">
+      <p class="eyebrow">Online Ordering</p>
+      <h1>Order pickup from our full menu</h1>
+      <p class="hero-copy">
+        We currently offer pickup-only ordering for faster check-in and easier pickup windows.
+      </p>
+      <a class="btn" href={restaurant.ordering.toastUrl} target="_blank" rel="noreferrer">Order on Toast</a>
+    </div>
+
+    <section class="content-band">
+      <h2>Why pickup is easier right now</h2>
+      <div class="two-column-copy">
+        <p>
+          You can place online, choose a pickup time, and skip the wait. For larger groups, we also ask guests to place
+          large-party requests 24 hours ahead.
+        </p>
+        <p>
+          If ordering is for an event, call us for catering-level coordination and timing confirmation before you check out.
+        </p>
+      </div>
+    </section>
+  </main>
+</SiteLayout>

@@ -1,0 +1,66 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import { restaurant } from "../data/site";
+---
+
+<SiteLayout
+  title="Catering | Bella Rosa Italian Kitchen"
+  description="Plan private events and catering with Bella Rosa's chef-driven service."
+>
+  <main class="content-band page-frame">
+    <div class="section-heading">
+      <p class="eyebrow">Catering</p>
+      <h1>Private dining and events</h1>
+      <p class="hero-copy">
+        Tell us your date, guest count, and vibe. We build event menus around your celebration and pickup or onsite service needs.
+      </p>
+    </div>
+
+    <section class="content-band">
+      <h2>Popular events</h2>
+      <ul class="plain-list">
+        <li>Birthday dinners</li>
+        <li>Company events</li>
+        <li>Intimate anniversaries</li>
+        <li>Holiday and office hosting</li>
+      </ul>
+    </section>
+
+    <section class="content-band">
+      <h2>Catering inquiry</h2>
+      <form
+        class="simple-form"
+        action={`mailto:${restaurant.managerEmail}?subject=Catering%20Inquiry`}
+        method="POST"
+        enctype="text/plain"
+      >
+        <label>
+          Name
+          <input type="text" name="name" required />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          Phone
+          <input type="tel" name="phone" />
+        </label>
+        <label>
+          Event date
+          <input type="date" name="eventDate" />
+        </label>
+        <label>
+          Guests
+          <input type="number" name="guests" min="1" />
+        </label>
+        <label>
+          Details
+          <textarea name="details" rows="6"></textarea>
+        </label>
+        <button type="submit" class="btn">Send inquiry</button>
+      </form>
+      <p class="hero-copy">If your browser does not open an email client, please call <a href={`tel:${restaurant.phone.replace(/\D/g, "")}`}>{restaurant.phone}</a>.</p>
+    </section>
+  </main>
+</SiteLayout>

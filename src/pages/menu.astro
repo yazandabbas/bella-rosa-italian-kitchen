@@ -1,0 +1,64 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import { menuItems, restaurant } from "../data/site";
+---
+
+<SiteLayout
+  title="Menu | Bella Rosa Italian Kitchen"
+  description="Browse Bella Rosa's seasonal menu with prices, descriptions, and featured dishes."
+>
+  <main class="content-band page-frame">
+    <div class="section-heading">
+      <p class="eyebrow">Menu</p>
+      <h1>Seasonal menu with all-day neighborhood favorites.</h1>
+      <p class="hero-copy">
+        Prices and dishes update seasonally. You can view the full PDF version below or read this web menu and plan ahead before your reservation.
+      </p>
+      <div class="menu-actions">
+        <a class="btn" href="/assets/menu.pdf">Download PDF menu</a>
+        <a class="btn btn--ghost" href="/online-ordering">Order pickup from menu</a>
+      </div>
+    </div>
+
+    <div class="menu-file">
+      <iframe
+        title="Bella Rosa menu PDF"
+        src="/assets/menu.pdf"
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    {menuItems.map((category) => (
+      <section class="content-band">
+        <h2>{category.section}</h2>
+        <div class="menu-list">
+          {category.items.map((item) => (
+            <article class="menu-card">
+              <img src={item.image} alt={item.name} loading="lazy" />
+              <div>
+                <div class="menu-title-row">
+                  <h3>{item.name}</h3>
+                  <strong>{item.price}</strong>
+                </div>
+                <p class="menu-copy">{item.description}</p>
+                <div class="menu-tags">
+                  {item.tags.map((tag) => <span class="tag">{tag}</span>)}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <section class="content-band">
+      <div class="section-heading">
+        <h2>Menu updates</h2>
+        <p class="hero-copy">
+          Looking for dietary details, kids portions, or wine pairings? We update this menu seasonally and can answer custom requests through the contact form.
+        </p>
+        <p><a href={`mailto:${restaurant.managerEmail}?subject=Menu%20question`} class="inline-link">Ask about dietary needs</a></p>
+      </div>
+    </section>
+  </main>
+</SiteLayout>

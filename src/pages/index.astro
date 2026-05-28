@@ -1,0 +1,97 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import { featuredDishes, restaurant } from "../data/site";
+---
+
+<SiteLayout
+  title="Bella Rosa Italian Kitchen | Charlotte, NC"
+  description="Bella Rosa Italian Kitchen — neighborhood dining in Charlotte with reservations and pickup ordering."
+>
+  <main>
+    <section class="hero surface-frame">
+      <div class="hero-content">
+        <p class="eyebrow">Elegant • Warm • Neighborhood</p>
+        <h1 class="hero-title">Bella Rosa is the neighborhood Italian table where dinner feels like home.</h1>
+        <p class="hero-copy">
+          Reserve a table, order pickup, browse the menu, and discover our seasonally changing dishes inspired by
+          old-world flavors and Southern hospitality.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="/reservations">Reserve a Table</a>
+          <a class="btn btn--ghost" href="/online-ordering">Order Pickup</a>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <p class="eyebrow">Today at Bella Rosa</p>
+        <div class="hero-kv">
+          <h2>Location</h2>
+          <p>{restaurant.address}</p>
+          <p><a class="inline-link" href={restaurant.links.googleMapsQuery} target="_blank" rel="noreferrer">Open in Google Maps</a></p>
+          <h2>Hours</h2>
+          <p>Mon–Thu: {restaurant.hours.monThu}</p>
+          <p>Fri–Sat: {restaurant.hours.friSat}</p>
+          <p>Sun: {restaurant.hours.sunday}</p>
+          <h2>Featured Dishes</h2>
+          <ul class="feature-dish-list">
+            {featuredDishes.map((dish) => <li>{dish.name} — {dish.price}</li>)}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-band">
+      <div class="section-heading">
+        <p class="eyebrow">Main actions</p>
+        <h2>Start with what matters most:</h2>
+      </div>
+      <div class="home-quick-links">
+        <a class="card" href="/reservations">
+          <h3>Make a reservation</h3>
+          <p>Reserve quickly through OpenTable right from this site.</p>
+          <span class="link-arrow">Reserve now →</span>
+        </a>
+        <a class="card" href="/online-ordering">
+          <h3>Order pickup</h3>
+          <p>Browse the seasonal menu with fast pickup via Toast.</p>
+          <span class="link-arrow">Order now →</span>
+        </a>
+        <a class="card" href="/contact">
+          <h3>Get directions</h3>
+          <p>Find us in Charlotte South End / Dilworth area.</p>
+          <span class="link-arrow">Open map →</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="content-band">
+      <div class="section-heading">
+        <p class="eyebrow">About Bella Rosa</p>
+        <h2>Simple recipes, bright flavors, warm service.</h2>
+      </div>
+      <div class="two-column-copy">
+        <p>
+          Bella Rosa is designed to feel like your neighborhood favorite with a chef’s attention to detail. We keep the
+          menu focused and seasonal, with meaningful upgrades as spring and fall ingredients shift.
+        </p>
+        <p>
+          We update our menu regularly and want both comfort and celebration in one place — whether you’re planning a
+          date night or a family gathering.
+        </p>
+      </div>
+      <a class="inline-link" href="/about">Read our story</a>
+    </section>
+
+    <section class="content-band">
+      <div class="section-heading">
+        <p class="eyebrow">What guests say</p>
+        <h2>Seasoned hospitality and honest food.</h2>
+      </div>
+      <blockquote class="quote-block">
+        “Our table was everything we hoped for—cozy, attentive, and full of personality. You can feel the care in every
+        course.”
+        <footer>— Priya, Sunday family dinner</footer>
+      </blockquote>
+      <a class="inline-link" href="/reviews">Read reviews</a>
+    </section>
+  </main>
+</SiteLayout>

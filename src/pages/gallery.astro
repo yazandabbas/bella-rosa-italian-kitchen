@@ -1,0 +1,28 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import { galleryImages } from "../data/site";
+---
+
+<SiteLayout
+  title="Gallery | Bella Rosa Italian Kitchen"
+  description="A gallery of Bella Rosa interiors, dishes, and chef shots."
+>
+  <main class="content-band page-frame">
+    <div class="section-heading">
+      <p class="eyebrow">Gallery</p>
+      <h1>Food and atmosphere snapshots</h1>
+      <p class="hero-copy">
+        We are adding a fresh set of high-resolution photos for launch week. These placeholders represent planned layout and
+        spacing, and will be replaced with your final assets.
+      </p>
+    </div>
+    <div class="gallery-grid">
+      {galleryImages.map((image) => (
+        <figure>
+          <img src={image.src} alt={image.alt} loading="lazy" />
+          <figcaption>{image.alt}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </main>
+</SiteLayout>

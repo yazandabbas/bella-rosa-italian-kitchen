@@ -1,0 +1,110 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import { restaurant, testimonials } from "../data/site";
+---
+
+<SiteLayout
+  title="Contact | Bella Rosa Italian Kitchen"
+  description="Contact Bella Rosa Italian Kitchen, leave a message, and get directions in Charlotte."
+>
+  <main class="content-band page-frame">
+    <div class="section-heading">
+      <p class="eyebrow">Contact</p>
+      <h1>Tell us how we can help</h1>
+      <p class="hero-copy">We'd love to hear from you—reservations, special requests, or event ideas, we can help.</p>
+    </div>
+
+    <section class="content-band grid-two">
+      <div>
+        <h2>Address & phone</h2>
+        <p>{restaurant.address}</p>
+        <p><a href={`tel:${restaurant.phone.replace(/\D/g, "")}`}>{restaurant.phone}</a></p>
+        <p><a href={`mailto:${restaurant.email}`}>{restaurant.email}</a></p>
+        <h3>Hours</h3>
+        <ul class="plain-list">
+          <li>Mon–Thu: {restaurant.hours.monThu}</li>
+          <li>Fri–Sat: {restaurant.hours.friSat}</li>
+          <li>Sun: {restaurant.hours.sunday}</li>
+        </ul>
+        <h3>Social links</h3>
+        <p>
+          <a class="inline-link" href={restaurant.links.instagram} target="_blank" rel="noreferrer">Instagram</a> |
+          <a class="inline-link" href={restaurant.links.facebook} target="_blank" rel="noreferrer">Facebook</a> |
+          <a class="inline-link" href={restaurant.links.googleReviews} target="_blank" rel="noreferrer">Google Reviews</a> |
+          <a class="inline-link" href={restaurant.links.yelp} target="_blank" rel="noreferrer">Yelp</a>
+        </p>
+      </div>
+      <form
+        class="simple-form"
+        action={`mailto:${restaurant.managerEmail}?subject=Website%20contact%20inquiry`}
+        method="POST"
+        enctype="text/plain"
+      >
+        <label>
+          Full name
+          <input name="name" type="text" required />
+        </label>
+        <label>
+          Email
+          <input name="email" type="email" required />
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="6" required></textarea>
+        </label>
+        <button type="submit" class="btn">Send message</button>
+      </form>
+    </section>
+
+    <section class="content-band">
+      <h2>Newsletter</h2>
+      <p class="hero-copy">Get seasonal updates, tasting events, and Sunday specials.</p>
+      <form
+        class="simple-form"
+        action={`mailto:${restaurant.managerEmail}?subject=Newsletter%20signup`}
+        method="POST"
+        enctype="text/plain"
+      >
+        <label>
+          Email
+          <input name="newsletter_email" type="email" required />
+        </label>
+        <button type="submit" class="btn">Join Newsletter</button>
+      </form>
+    </section>
+
+    <section class="content-band">
+      <h2>Find us</h2>
+      <div class="map-wrap">
+        <iframe
+          title="Bella Rosa Location"
+          src={restaurant.links.googleMapEmbed}
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <p><a class="inline-link" href={restaurant.links.googleMapsQuery} target="_blank" rel="noreferrer">Open directions in Google Maps</a></p>
+    </section>
+
+    <section class="content-band">
+      <h2>Instagram feed</h2>
+      <div class="instagram-feed">
+        <p>
+          Add your live Instagram feed embed below (for example a SnapWidget or custom block code). Until that is added,
+          this section links directly to the profile and keeps engagement visible.
+        </p>
+        <a class="inline-link" href={restaurant.links.instagram} target="_blank" rel="noreferrer">
+          Follow and view latest posts on Instagram
+        </a>
+      </div>
+    </section>
+
+    <section class="content-band">
+      <h2>Client testimonial spotlight</h2>
+      <blockquote class="quote-block">
+        “The team made our party feel effortless. Bella Rosa took care of the details beautifully.”
+        <footer>— {testimonials[0].name}</footer>
+      </blockquote>
+    </section>
+  </main>
+</SiteLayout>
