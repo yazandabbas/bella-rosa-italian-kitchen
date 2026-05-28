@@ -10,8 +10,8 @@ import { restaurant, testimonials } from "../data/site";
   <main class="content-band page-frame">
     <div class="section-heading">
       <p class="eyebrow">Contact</p>
-      <h1>Tell us how we can help</h1>
-      <p class="hero-copy">We'd love to hear from you—reservations, special requests, or event ideas, we can help.</p>
+      <h1>Contact Bella Rosa</h1>
+      <p class="hero-copy">Call, email, or send a message for reservations, catering, or general questions.</p>
     </div>
 
     <section class="content-band grid-two">
@@ -58,7 +58,7 @@ import { restaurant, testimonials } from "../data/site";
 
     <section class="content-band">
       <h2>Newsletter</h2>
-      <p class="hero-copy">Get seasonal updates, tasting events, and Sunday specials.</p>
+      <p class="hero-copy">Sign up for menu updates and restaurant announcements.</p>
       <form
         class="simple-form"
         action={`mailto:${restaurant.managerEmail}?subject=Newsletter%20signup`}
@@ -90,8 +90,7 @@ import { restaurant, testimonials } from "../data/site";
       <h2>Instagram feed</h2>
       <div class="instagram-feed">
         <p>
-          Add your live Instagram feed embed below (for example a SnapWidget or custom block code). Until that is added,
-          this section links directly to the profile and keeps engagement visible.
+          Follow Bella Rosa on Instagram for menu photos, hours updates, and event posts.
         </p>
         <a class="inline-link" href={restaurant.links.instagram} target="_blank" rel="noreferrer">
           Follow and view latest posts on Instagram
@@ -100,9 +99,9 @@ import { restaurant, testimonials } from "../data/site";
     </section>
 
     <section class="content-band">
-      <h2>Client testimonial spotlight</h2>
+      <h2>Guest note</h2>
       <blockquote class="quote-block">
-        “The team made our party feel effortless. Bella Rosa took care of the details beautifully.”
+        “The catering order was ready on time, and everything traveled well.”
         <footer>— {testimonials[0].name}</footer>
       </blockquote>
     </section>

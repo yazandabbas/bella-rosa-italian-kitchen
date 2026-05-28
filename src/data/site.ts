@@ -153,19 +153,19 @@ export const galleryImages = [
 export const testimonials = [
   {
     quote:
-      "The risotto was perfectly creamy and the room has such a warm, relaxed feeling. Perfect for our anniversary.",
+      "The risotto was excellent, and the staff paced the meal well.",
     name: "Elena M.",
     source: "Dinner guest",
   },
   {
     quote:
-      "They helped us plan the entire company dinner from menu to timing. Service was thoughtful and seamless.",
+      "Our office order was ready on time, packed neatly, and easy to serve.",
     name: "David R.",
     source: "Catering event",
   },
   {
     quote:
-      "The food tastes like the best kind of old-school Sunday in Italy—without losing anything modern about presentation.",
+      "Good pasta, good wine list, and no rush at the table.",
     name: "Priya K.",
     source: "Regular visitor",
   },

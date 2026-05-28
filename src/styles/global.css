@@ -584,12 +584,14 @@ h3 {
   border-top: 1px solid var(--border);
 }
 
-.menu-pdf-preview iframe {
+.menu-pdf-cover {
+  display: block;
+}
+
+.menu-pdf-cover img {
   width: 100%;
-  height: min(76vh, 680px);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-card);
-  background: white;
+  max-height: 680px;
+  object-fit: cover;
 }
 
 .home-quick-links {

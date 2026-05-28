@@ -12,8 +12,8 @@ import { menuItems, restaurant } from "../data/site";
       <img src="/assets/generated/bella-menu-cover.png" alt="Bella Rosa spring menu table with pasta, wine, and candlelight" />
       <div>
         <p class="eyebrow eyebrow--light">Seasonal Menu</p>
-        <h1>Spring at Bella Rosa</h1>
-        <p>Handmade pasta, bright antipasti, and cozy mains for date night, family tables, and easy pickup.</p>
+        <h1>Menu</h1>
+        <p>Fresh pasta, small plates, and classic Italian mains for lunch, dinner, and pickup.</p>
         <div class="menu-actions">
           <a class="btn" href="/assets/menu.pdf">Download PDF</a>
           <a class="btn btn--light" href="/online-ordering">Order Pickup</a>
@@ -57,10 +57,13 @@ import { menuItems, restaurant } from "../data/site";
     <section class="menu-pdf-preview">
       <div>
         <p class="eyebrow">PDF Menu</p>
-        <h2>A designed menu for the table, inbox, or printer.</h2>
-        <p>Use the PDF for sharing, seasonal updates, or quick printouts. The web menu above stays easy to scan on phones.</p>
+        <h2>Prefer a printable menu?</h2>
+        <p>Download the current spring menu as a PDF.</p>
+        <a class="btn btn--ghost" href="/assets/menu.pdf">Download PDF</a>
       </div>
-      <iframe title="Bella Rosa menu PDF" src="/assets/menu.pdf" loading="lazy"></iframe>
+      <a class="menu-pdf-cover" href="/assets/menu.pdf" aria-label="Download Bella Rosa PDF menu">
+        <img src="/assets/generated/bella-menu-cover.png" alt="Bella Rosa menu cover with pasta and wine" loading="lazy" />
+      </a>
     </section>
   </main>
 </SiteLayout>

@@ -10,10 +10,9 @@ import { restaurant } from "../data/site";
   <main class="content-band page-frame">
     <div class="section-heading">
       <p class="eyebrow">Reservations</p>
-      <h1>Reserve your seat</h1>
+      <h1>Reservations</h1>
       <p class="hero-copy">
-        OpenTable availability and reservation details are embedded below. You can also call us directly for party sizes or special
-        seating requests.
+        Book through OpenTable or call the restaurant for larger parties.
       </p>
       <a class="btn" href={`tel:${restaurant.phone.replace(/\D/g, "")}`}>Call to reserve</a>
     </div>
@@ -26,7 +25,7 @@ import { restaurant } from "../data/site";
         loading="lazy"
       ></iframe>
       <p class="hero-copy">
-        Don’t see the widget? Open directly with OpenTable:
+        If the widget does not load, use OpenTable directly:
         <a class="inline-link" href={restaurant.reservation.openTableButtonUrl} target="_blank" rel="noreferrer">
           OpenTable reservation page
         </a>
