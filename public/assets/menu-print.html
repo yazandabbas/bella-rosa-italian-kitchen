@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bella Rosa Italian Kitchen Menu</title>
+    <style>
+      @page {
+        size: Letter;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: #141313;
+        background: #fdfaf5;
+        font-family: "Georgia", "Times New Roman", serif;
+      }
+
+      .page {
+        width: 8.5in;
+        min-height: 11in;
+        padding: 0.55in;
+        page-break-after: always;
+        position: relative;
+      }
+
+      .cover {
+        display: grid;
+        align-content: end;
+        color: #f4efe6;
+        background:
+          linear-gradient(0deg, rgba(20, 19, 19, 0.78), rgba(20, 19, 19, 0.18)),
+          url("./generated/bella-menu-cover.png") center / cover;
+      }
+
+      .cover h1 {
+        width: 5.9in;
+        margin: 0;
+        font-size: 68px;
+        line-height: 0.95;
+      }
+
+      .cover p {
+        max-width: 4.9in;
+        margin: 18px 0 0;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        color: #5a1d2e;
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .cover .eyebrow {
+        color: #f4efe6;
+      }
+
+      h2 {
+        margin: 0 0 20px;
+        color: #12342a;
+        font-size: 32px;
+      }
+
+      .meta {
+        display: flex;
+        gap: 18px;
+        justify-content: space-between;
+        margin-bottom: 26px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid #dfd6c5;
+        font-family: Arial, sans-serif;
+        font-size: 10.5px;
+      }
+
+      .section {
+        margin-bottom: 30px;
+      }
+
+      .item {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+        padding: 12px 0;
+        border-bottom: 1px solid #dfd6c5;
+      }
+
+      .item h3 {
+        margin: 0;
+        font-size: 18px;
+      }
+
+      .item p {
+        margin: 5px 0 0;
+        color: #3a3531;
+        font-family: Arial, sans-serif;
+        font-size: 10.5px;
+        line-height: 1.45;
+      }
+
+      .price {
+        color: #5a1d2e;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .tags {
+        margin-top: 6px;
+        color: #12342a;
+        font-family: Arial, sans-serif;
+        font-size: 8.5px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .footer {
+        position: absolute;
+        left: 0.55in;
+        right: 0.55in;
+        bottom: 0.34in;
+        display: flex;
+        justify-content: space-between;
+        color: #514a44;
+        font-family: Arial, sans-serif;
+        font-size: 9.5px;
+        border-top: 1px solid #dfd6c5;
+        padding-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="page cover">
+      <p class="eyebrow">Spring Menu · Charlotte, NC</p>
+      <h1>Bella Rosa Italian Kitchen</h1>
+      <p>
+        Handmade pasta, seasonal Italian plates, cozy mains, and pickup-friendly favorites for South End and Dilworth.
+      </p>
+    </section>
+
+    <section class="page">
+      <div class="meta">
+        <span>1842 Maple Avenue, Charlotte, NC 28203</span>
+        <span>(704) 555-2819</span>
+        <span>bellarosakitchen.com</span>
+      </div>
+
+      <div class="section">
+        <p class="eyebrow">Bella Rosa</p>
+        <h2>Antipasti &amp; Small Plates</h2>
+        <div class="item">
+          <div>
+            <h3>Crispy Fried Artichoke Hearts</h3>
+            <p>Whole artichokes roasted with lemon-herb aioli and a touch of lemon zest.</p>
+            <div class="tags">Popular · Vegetarian</div>
+          </div>
+          <div class="price">$15</div>
+        </div>
+        <div class="item">
+          <div>
+            <h3>Bruschetta Classica</h3>
+            <p>Toasted focaccia, vine-ripened tomatoes, basil, and extra virgin olive oil.</p>
+            <div class="tags">Vegetarian</div>
+          </div>
+          <div class="price">$12</div>
+        </div>
+        <div class="item">
+          <div>
+            <h3>Prosciutto and Melon</h3>
+            <p>Thinly sliced prosciutto with chilled cantaloupe and house ricotta, finished with cracked black pepper.</p>
+            <div class="tags">Gluten-Free</div>
+          </div>
+          <div class="price">$13</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="eyebrow">Bella Rosa</p>
+        <h2>Pasta &amp; Risotto</h2>
+        <div class="item">
+          <div>
+            <h3>Truffle Tagliatelle</h3>
+            <p>House-made tagliatelle with wild mushrooms, butter, white wine, and shaved black truffle.</p>
+            <div class="tags">Popular</div>
+          </div>
+          <div class="price">$28</div>
+        </div>
+        <div class="item">
+          <div>
+            <h3>Lemon Risotto Primavera</h3>
+            <p>Creamy seasonal risotto with spring peas, asparagus, and lemon zest.</p>
+            <div class="tags">Vegetarian · Gluten-Free</div>
+          </div>
+          <div class="price">$24</div>
+        </div>
+        <div class="item">
+          <div>
+            <h3>Spicy Sausage Pappardelle</h3>
+            <p>House-made pappardelle with San Marzano tomato, house sausage, chili oil, and aged pecorino.</p>
+            <div class="tags">Popular</div>
+          </div>
+          <div class="price">$30</div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <span>Hours: Mon-Thu 11 AM-9 PM · Fri-Sat 11 AM-10:30 PM · Sun 12 PM-8 PM</span>
+        <span>Order pickup or reserve online</span>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="section">
+        <p class="eyebrow">Bella Rosa</p>
+        <h2>Mains</h2>
+        <div class="item">
+          <div>
+            <h3>Chicken Saltimbocca</h3>
+            <p>Chicken breast wrapped with Serrano ham, sage, and a buttered caper pan sauce.</p>
+            <div class="tags">Popular</div>
+          </div>
+          <div class="price">$34</div>
+        </div>
+        <div class="item">
+          <div>
+            <h3>Braised Short Ribs al Vino Rosso</h3>
+            <p>Slow-braised short ribs over creamy polenta with roasted carrots and gremolata.</p>
+          </div>
+          <div class="price">$38</div>
+        </div>
+        <div class="item">
+          <div>
+            <h3>Eggplant Parmigiana</h3>
+            <p>Crispy eggplant, tomato-simmered sauce, baked mozzarella, and herb breadcrumbs.</p>
+            <div class="tags">Vegetarian</div>
+          </div>
+          <div class="price">$26</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="eyebrow">Planning Notes</p>
+        <h2>Reservations, Pickup &amp; Events</h2>
+        <div class="item">
+          <div>
+            <h3>Reservations</h3>
+            <p>Book through OpenTable or call the restaurant for larger parties and special seating requests.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <h3>Pickup Ordering</h3>
+            <p>Pickup is available through Toast. For catering-size orders, please inquire 24 hours ahead.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <h3>Private Dining</h3>
+            <p>Family-style menus are available for birthdays, office dinners, anniversaries, and holiday hosting.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <span>info@bellarosakitchen.com</span>
+        <span>1842 Maple Avenue, Charlotte, NC 28203</span>
+      </div>
+    </section>
+  </body>
+</html>

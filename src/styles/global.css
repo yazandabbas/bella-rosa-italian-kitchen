@@ -474,6 +474,124 @@ h3 {
   margin-top: 1rem;
 }
 
+.menu-page {
+  padding-bottom: 3rem;
+}
+
+.menu-hero {
+  position: relative;
+  min-height: 560px;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--deep-black);
+}
+
+.menu-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(20, 19, 19, 0.8), rgba(20, 19, 19, 0.32)),
+    linear-gradient(0deg, rgba(20, 19, 19, 0.7), rgba(20, 19, 19, 0.05));
+}
+
+.menu-hero > img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.menu-hero > div {
+  width: min(100% - 2rem, 72rem);
+  margin: 0 auto;
+  padding: 6rem 0 5rem;
+  color: var(--cream);
+}
+
+.menu-hero p {
+  max-width: 36rem;
+  font-size: 1.05rem;
+}
+
+.menu-intro {
+  width: min(100% - 2rem, 72rem);
+  margin: 1.6rem auto 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 1.5rem;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+  color: #514a44;
+}
+
+.menu-board {
+  width: min(100% - 2rem, 72rem);
+  margin: 0 auto;
+  display: grid;
+  gap: 3.5rem;
+}
+
+.menu-section {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.32fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.menu-section__heading {
+  position: sticky;
+  top: 6rem;
+}
+
+.menu-items {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.menu-row {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  gap: 1rem;
+  padding-bottom: 1.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.menu-row img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.menu-row__content {
+  align-self: center;
+}
+
+.menu-pdf-preview {
+  width: min(100% - 2rem, 72rem);
+  margin: 4rem auto 0;
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.35fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.menu-pdf-preview iframe {
+  width: 100%;
+  height: min(76vh, 680px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: white;
+}
+
 .home-quick-links {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -754,6 +872,9 @@ details p {
   .two-column-copy,
   .grid-two,
   .menu-list,
+  .menu-section,
+  .menu-row,
+  .menu-pdf-preview,
   .review-grid,
   .gallery-grid,
   .feature-grid,
@@ -803,6 +924,18 @@ details p {
 
   .page-frame {
     padding-top: 2rem;
+  }
+
+  .menu-hero {
+    min-height: 520px;
+  }
+
+  .menu-section__heading {
+    position: static;
+  }
+
+  .menu-row img {
+    aspect-ratio: 4 / 3;
   }
 
   .announcement-root {
