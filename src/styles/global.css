@@ -140,6 +140,10 @@ img {
   white-space: nowrap;
 }
 
+.site-nav a {
+  flex: 0 0 auto;
+}
+
 .header-cta {
   display: inline-flex;
   align-items: center;
@@ -866,8 +870,11 @@ details p {
     grid-row: 2;
     justify-content: flex-start;
     overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
     padding-bottom: 0.2rem;
     scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
   }
 
   .visual-hero__content {
@@ -894,6 +901,8 @@ details p {
     grid-column: 1 / -1;
     justify-content: flex-start;
     overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
     padding-bottom: 0.15rem;
   }
 
