@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;500;600&display=swap");
 
-@theme {
+:root {
   --deep-red: #5a1d2e;
   --cream: #f4efe6;
   --dark-green: #12342a;
@@ -11,9 +11,6 @@
   --font-display: "Cormorant Garamond", "Times New Roman", serif;
   --font-body: "Inter", "Segoe UI", sans-serif;
   --radius-card: 0.7rem;
-}
-
-:root {
   color: var(--deep-black);
   background: var(--paper);
   color-scheme: light;
